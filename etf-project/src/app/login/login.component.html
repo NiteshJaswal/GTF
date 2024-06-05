@@ -1,0 +1,39 @@
+<div class="container-fluid" [ngClass]="{ _zindex: isHover == false }">
+  <div class="logoCenter mx-auto" [ngClass]="{ _hide: isHover == true }"></div>
+  <div class="top">
+    <div class="bottom">
+      <div class="center">
+        <div class="form_outer">
+          <div class="inner_form">
+            <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Username"
+                  name="username"
+                  ngModel
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  ngModel
+                  required
+                />
+              </mat-form-field>
+              <div class="nexLine">
+                <button mat-raised-button color="primary" type="submit">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

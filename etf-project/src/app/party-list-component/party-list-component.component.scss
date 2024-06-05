@@ -1,0 +1,69 @@
+
+
+  button[mat-raised-button] {
+    margin: 20px 0;
+    display: block;
+  }
+  
+
+  .mat-elevation-z8 {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  
+  .mat-header-cell {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+  }
+  
+
+  .mat-cell {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .mat-row:nth-child(odd) .mat-cell {
+    background-color: #f9f9f9;
+  }
+  
+
+  .imgStyle {
+    width: 16px;
+    height: 16px;
+    margin: 0 2px;
+    cursor: pointer;
+  }
+  
+  
+  .mat-row:hover {
+    background-color: #eeeeee;
+  }
+  
+ 
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .mat-header-cell, .mat-cell {
+      font-size: 14px;
+      padding: 6px;
+    }
+  
+    .imgStyle {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .addBtn{
+    float: right;
+    margin-right: 20px;
+  }

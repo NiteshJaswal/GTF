@@ -1,0 +1,125 @@
+<button mat-raised-button color="primary" (click)="addParty()" class="addBtn">
+  + Add Party
+</button>
+
+<table mat-table [dataSource]="parties" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let item">{{ item?.id ? item?.id : "--" }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="company_name">
+    <th mat-header-cell *matHeaderCellDef>Company Name</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.company_name ? item?.company_name : "--" }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef>Image</th>
+    <td mat-cell *matCellDef="let item">
+      <img src="{{ item.image ? item.image : '--' }}" />
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.email ? item?.email : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="mobile_no">
+    <th mat-header-cell *matHeaderCellDef>Mobile number</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.mobile_no ? item?.mobile_no : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="telephone_no">
+    <th mat-header-cell *matHeaderCellDef>Telephone number</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.telephone_no ? item?.telephone_no : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pan_no">
+    <th mat-header-cell *matHeaderCellDef>Pan No.</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.pan_no ? item?.pan_no : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="gstin">
+    <th mat-header-cell *matHeaderCellDef>gstin</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.gstin ? item?.gstin : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="anniversary_date">
+    <th mat-header-cell *matHeaderCellDef>Anniversary Date</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.anniversary_date ? item?.anniversary_date : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="credit_limit">
+    <th mat-header-cell *matHeaderCellDef>Credit Limit</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.credit_limit ? item?.credit_limit : "--" }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="bank_detail">
+    <th mat-header-cell *matHeaderCellDef>Bank Detail</th>
+    <td mat-cell *matCellDef="let item">
+      <span
+        *ngIf="item?.bank_id?.length != 0"
+        (click)="showDataInPopup(item?.bank_id[0])"
+        style="cursor: pointer; text-decoration: underline; color: blue"
+      >
+        Click Here
+      </span>
+      <span *ngIf="item?.bank_id?.length == 0">--</span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef>Address</th>
+    <td mat-cell *matCellDef="let item">
+      <span
+        *ngIf="item?.address?.length != 0"
+        (click)="showDataInPopup(item?.address[0])"
+        style="cursor: pointer; text-decoration: underline; color: blue"
+      >
+        Click Here
+      </span>
+      <span *ngIf="item?.address?.length == 0">--</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date_of_birth">
+    <th mat-header-cell *matHeaderCellDef>DOB</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item?.date_of_birth ? item?.date_of_birth : "--" }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let item">
+      <img
+        src="../../assets/Images/edit (1).png"
+        class="imgStyle"
+        (click)="editParty(item)"
+      />
+      <img
+        src="../../assets/Images/bin.png"
+        class="imgStyle"
+        (click)="deleteParty(item.id)"
+      />
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

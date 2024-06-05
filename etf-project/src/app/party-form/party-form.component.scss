@@ -1,0 +1,45 @@
+.party-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .mat-form-field {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+  
+  .address-group,
+  .bank-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .form-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .upload-file {
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;  
+    height: 24px;  
+  }
+  
+  .upload-file img {
+    width: 100%;
+    height: 100%;
+  }

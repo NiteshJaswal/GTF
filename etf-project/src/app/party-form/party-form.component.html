@@ -1,0 +1,235 @@
+<div class="partyText">
+  <span *ngIf="isEdit == false">ADD PARTY</span>
+  <span *ngIf="isEdit == true"> EDIT PARTY</span>
+</div>
+
+<form [formGroup]="partyForm" (ngSubmit)="onSubmit()" class="party-form">
+  <div class="form-section">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Name" formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Company Name"
+        formControlName="company_name"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Mobile Number"
+        formControlName="mobile_no"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Telephone Number"
+        formControlName="telephone_no"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="WhatsApp Number"
+        formControlName="whatsapp_no"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Remark" formControlName="remark" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="login_access">Login Access</mat-checkbox>
+  </div>
+
+  <div class="form-section">
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Date of Birth"
+        formControlName="date_of_birth"
+        type="date"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Anniversary Date"
+        formControlName="anniversary_date"
+        type="date"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="GSTIN"
+        formControlName="gstin"
+        type="number"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="PAN Number" formControlName="pan_no" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="apply_tds">Apply TDS</mat-checkbox>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Credit Limit"
+        formControlName="credit_limit"
+      />
+    </mat-form-field>
+  </div>
+
+  <div formArrayName="addresses" class="form-section">
+    <div
+      *ngFor="let address of addresses.controls; let i = index"
+      [formGroupName]="i"
+      class="address-group"
+    >
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Address Line 1"
+          formControlName="address_line_1"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Address Line 2"
+          formControlName="address_line_2"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Country"
+          formControlName="country"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="State" formControlName="state" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="City" formControlName="city" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Pincode"
+          formControlName="pincode"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <!-- <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="addAddress()"
+    >
+      Add Address
+    </button> -->
+  </div>
+
+  <div formArrayName="banks" class="form-section">
+    <div
+      *ngFor="let bank of banks.controls; let i = index"
+      [formGroupName]="i"
+      class="bank-group"
+    >
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Bank IFSC Code"
+          formControlName="bank_ifsc_code"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Bank Name"
+          formControlName="bank_name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Branch Name"
+          formControlName="branch_name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Account Number"
+          formControlName="account_no"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Account Holder Name"
+          formControlName="account_holder_name"
+          required
+        />
+      </mat-form-field>
+
+      <input
+        type="file"
+        placeholder="Account Holder Name"
+        formControlName="image"
+        id="upload"
+      />
+    </div>
+    <!-- <button type="button" mat-raised-button color="primary" (click)="addBank()">
+      Add Bank
+    </button> -->
+  </div>
+
+  <div class="form-action">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      *ngIf="isEdit == false"
+    >
+      Save
+    </button>
+  </div>
+</form>
+<div class="updateBtn" style="justify-content: center; display: flex">
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    *ngIf="isEdit == true"
+    (click)="updatePartyList()"
+  >
+    Update
+  </button>
+</div>
