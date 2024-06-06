@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ic_upload</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download" transform="translate(-1336.000000, -153.000000)" fill="#fff" fill-rule="nonzero">
+            <g id="Group" transform="translate(1013.000000, 140.000000)">
+                <g id="Group-4" transform="translate(215.000000, 12.000000)">
+                    <g id="ic_upload" transform="translate(108.000000, 1.000000)">
+                        <path d="M20.9810452,13.8814507 L20.9810452,20.0601907 C20.9810452,20.5504004 20.5822276,20.949218 20.0920179,20.949218 L2.66708202,20.949218 C2.17687234,20.949218 1.77805468,20.5504004 1.77805468,20.0601907 L1.77805468,13.8814507 L0,13.8814507 L0,20.0601907 C0,21.5308197 1.19645299,22.7272727 2.66708202,22.7272727 L20.0920179,22.7272727 C21.5626469,22.7272727 22.7590999,21.5308197 22.7590999,20.0601907 L22.7590999,13.8814507 L20.9810452,13.8814507 Z" id="Path"></path>
+                        <polygon id="Path" points="11.37955 0 5.85495626 5.5245937 7.11221872 6.78185616 10.4905226 3.40355227 10.4905226 17.2597546 12.2685773 17.2597546 12.2685773 3.40355227 15.6468812 6.78185616 16.9041436 5.5245937"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
